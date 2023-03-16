@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Balance page</title>
+</head>
+<body>
+<a>Balance id:</a>
+<p th:text="${balance.getId()}">value</p>
+<a>Balance value:</a>
+<p th:text="${balance.getAmount()}">value</p>
+
+<div th:if="${operations.isEmpty()}">
+    <p>No operations on balance done yet</p>
+</div>
+<div th:if="${!operations.isEmpty()}">
+    <p>Operations</p>
+    <br/>
+    <table th:each="operation:${operations}">
+        <tr>
+            <td>
+                <span th:text="${operation.getId()+';'+operation.getAmount()}">
+                 operation
+                </span>
+            </td>
+        </tr>
+    </table>
+</div>
+<a href="/transaction" >New transaction</a>
+<br/>
+<a href="/rest/operations">Show transactions in json(rest)</a>
+</body>
+</html>

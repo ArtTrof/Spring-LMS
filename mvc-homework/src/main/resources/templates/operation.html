@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Operation</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/transaction}" th:object="${operation}">
+
+    <label for="amount">Enter full name</label>
+    <input type="number" th:field="*{amount}" id="amount">
+    <br/>
+
+    <input type="submit" value="Commit  transaction"/>
+</form>
+</body>
+</html>
