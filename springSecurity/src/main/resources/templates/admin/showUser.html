@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+<p th:text="${visitor.getUsername() +','+visitor.getId()+ ','+visitor.getRole()+ ','+visitor.getCreatedAt()}"></p>
+<form th:method="GET" th:action="@{/admin/users/{visitor}/edit(visitor=${visitor.getId()})}">
+<!--    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>-->
+    <input value="Edit" type="submit">
+</form>
+</body>
+</html>
