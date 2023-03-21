@@ -25,7 +25,7 @@ public class RegistrationService {
         String encodedPassword = passwordEncoder.encode(visitor.getPassword());
         visitor.setPassword(encodedPassword);
         visitor.setCreatedAt(new Date(System.currentTimeMillis()));
-        visitor.setRole("ROLE_USER");
+        visitor.setRole("ROLE_ADMIN");
         visitorRepository.save(visitor);
     }
 }
