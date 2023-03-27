@@ -1,0 +1,16 @@
+package org.example.speed_test_task4.post_proc;
+
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.BeanPostProcessor;
+
+public class MyPostProcessor implements BeanPostProcessor {
+    public Object postProcessAfterInitialization(Object object, String name) throws BeansException {
+        System.err.println(object + " - postProcessAfterInitialization()");
+        return object;
+    }
+
+    //@Override
+    public Object postProcessBeforeInitialization(Object object, String name) throws BeansException {
+        return object;
+    }
+}
